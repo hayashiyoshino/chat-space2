@@ -22,7 +22,7 @@ Chat-space2 is an instant messaging and collaboration system.
 ## user table
 
 |Column   |Type   |Options                             |
-|------------------------------------------------------|
+|---------|-------|------------------------------------|
 |name     |string |null: false                         |
 |email    |string |null: false, add_index, unique: true|
 
@@ -35,7 +35,7 @@ Chat-space2 is an instant messaging and collaboration system.
 ## groups table
 
 |Column    |Type   |Option                              |
-|-------------------------------------------------------|
+|----------|-------|------------------------------------|
 |group_name|string |null: false, add_index, unique: true|
 
 ### Association
@@ -47,7 +47,7 @@ Chat-space2 is an instant messaging and collaboration system.
 ## messages table
 
 |Column   |Type     |Option                        |
-|--------------------------------------------------|
+|---------|---------|------------------------------|
 |body     |text     |null: false                   |
 |image    |string   |                              |
 |group_id |reference|null: false, foreign_key: true|

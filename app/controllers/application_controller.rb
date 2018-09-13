@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up,keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
+
+  # deviseでは初期状態でサインアップ時にメールアドレスとパスワードのみを受け取れるようにストロングパラメーターが設定してあるので、追加したキーは許可されていない。
+  # ユーザーの名前のようなdeviseのデフォルトで設定されているカラム以外のデータを保存する場合は設定を追加しないといけない。
+  # 追加のパラメーターを許可したい時は、application_controller.rbにおいてbefore_actionにconfigure_permitted_parametersメソッドを設定する。
 end

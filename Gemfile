@@ -56,4 +56,5 @@ gem 'haml-rails'
 # railsでhaml使うためのgem
 gem 'erb2haml'
 # rake haml:replace_erbsコマンドでhamlに変換してくれるgem
+gem 'devise'
 

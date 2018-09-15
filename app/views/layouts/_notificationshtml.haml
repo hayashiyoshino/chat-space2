@@ -1,3 +1,35 @@
 .notification
   - flash.each do |key, value|
     = content_tag :div, value, class: key
+
+
+/ flashとは？
+/ ログイン時のウェルカムメッセージや、項目追加の成功通知など、ユーザーに簡単な通知を行いたいときに利用する。
+/ コントローラーでflashメッセージを設定し、ビューで表示する。
+/ flashは全体で見ればhash。あるキーに対する値としてメッセージを設定する。キーは自由に設定できるが、デフォルトとしてalertとnoticeがある。
+/ 設定したメッセージはsessionに保存される。つまりflashはsessionを利用した機能の１つ。
+/ 普通のセッション変数では破棄するまで値は保持されるが、flashの場合は一度表示されるとアクション終了時に自動的に消去される。
+
+/ 使い方
+/ コントローラーで定義
+/ flash[:notie] = "hogehoge"
+/ redirect_toのオプションとしても追加できる。
+/ redirect_to :root, flash => {:error => "errorが起きました"}
+/ ビューで表示
+/ <%= flash[:alert]%>
+
+/ flashの種類
+/ flash
+/ 一度表示されるまで値が保持される。
+/ そのアクション自体か、リダイレクトした次のアクションで利用。
+/ 一度表示された時点では記される。
+/ flash.now
+/ 定義したメソッド内(同じリクエスト内)でのみ有効。
+/ メソッド１で定義した場合、メソッド２では利用不可。
+/ redirectさせた先では表示されない。
+
+/ 使い方
+/ コントローラー
+/ flash.now[:notice] = "hello"
+/ ビュー
+/ <%= flash[:notice] %>

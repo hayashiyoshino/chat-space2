@@ -18,8 +18,8 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-  renderはHTTPリクエストを送らず、該当するビューだけを表示する。
-  redirect_toだとHTTPリクエストを送りそのレスポンスとして返ってくるビューを表示する。
+  # renderはHTTPリクエストを送らず、該当するビューだけを表示する。
+  # redirect_toだとHTTPリクエストを送りそのレスポンスとして返ってくるビューを表示する。
 
 
   def edit

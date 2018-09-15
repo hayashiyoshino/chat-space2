@@ -7,6 +7,8 @@ class GroupsController < ApplicationController
     @groups = Groups.new
     @group.users << current_user
   end
+  # @group.users << current_userと記述することで、現在ログイン中のユーザーを新規作成したグループに追加している。
+
 
   def create
     @group = Group.new(group_params)
@@ -16,6 +18,9 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+  renderはHTTPリクエストを送らず、該当するビューだけを表示する。
+  redirect_toだとHTTPリクエストを送りそのレスポンスとして返ってくるビューを表示する。
+
 
   def edit
   end

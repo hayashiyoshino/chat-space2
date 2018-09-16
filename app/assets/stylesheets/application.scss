@@ -1,5 +1,11 @@
 @import "./reset";
-@import "modules/user";
+@import "./variable";
 @import "config/colors";
+@import "mixins/mixin";
+
+@import "modules/user";
+@import "modules/chat";
 @import "modules/flash";
-@import "group"
+@import "modules/side_bar.scss";
+@import "group";
+

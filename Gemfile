@@ -57,4 +57,5 @@ gem 'haml-rails'
 gem 'erb2haml'
 # rake haml:replace_erbsコマンドでhamlに変換してくれるgem
 gem 'devise'
-
+gem 'carrierwave'
+gem 'mini_magick'

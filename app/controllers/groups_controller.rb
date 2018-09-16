@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
+  # グループの情報呼び出す処理はset_groupメソッドにまとめ、before_actionで呼び出す。
+
   def index
   end
 
@@ -32,6 +34,7 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
+  # グループが編集された時更新の可否に合わせた処理ができるように記述する。
 
   private
   def group_params

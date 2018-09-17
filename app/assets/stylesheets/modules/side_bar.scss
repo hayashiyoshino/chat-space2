@@ -18,10 +18,16 @@
       .list {
         display: inline-block;
       }
-      .icon {
-        color: $white;
-        font-size: $side_header_font;
+      a {
+        border: 1px solid #38AEF0;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 3px;
       }
+      // .icon {
+      //   color: $white;
+      //   font-size: $side_header_font;
+      // }
     }
   }
 

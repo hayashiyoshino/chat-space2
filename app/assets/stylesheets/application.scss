@@ -2,7 +2,7 @@
 @import "./variable";
 @import "config/colors";
 @import "mixins/mixin";
-
+@import "font-awesome";
 @import "modules/user";
 @import "modules/chat";
 @import "modules/flash";
@@ -12,3 +12,7 @@
 .wrapper {
   display: flex;
 }
+
+/*
+ *=require font-awesome
+  */

@@ -30,6 +30,7 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      border-radius:5px;
       &__button {
         color: $light_blue;
         text-decoration: none;
@@ -77,12 +78,14 @@
       float: left;
       height: 50px;
       width: calc(100% - 220px);
+      border-radius:5px 0 0 5px;
     }
     &__mask {
       background-color: $white;
       float: left;
       height: 50px;
       padding-right: 10px;
+      border-radius:0 5px 5px 0;
       &__image {
         font-size: 5px;
         line-height: 50px;
@@ -100,6 +103,7 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+      border-radius:5px;
     }
   }
 }

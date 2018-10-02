@@ -24,6 +24,9 @@ $(function() {
                 </div>`;
     return html;
   }
+  // HTMLを追加している。簡単な記述で実現できるのはテンプレートリテラル記法を使用しているため
+  // テンプレートリテラル記法は｀｀で囲むことによって、複数行文字列や文字列内挿入機能を使用できるもの。
+  // buildHTMLの引数として渡されたcommentはサーバーから返されたデータであるjbuilderのデータであるため、ファイル内で定義したキーとバリューの形式で使用することができる。
 
   function scroll() {
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
@@ -51,6 +54,9 @@ $(function() {
     // FormDataを使用してフォームの情報を取得した時には必ずfalseにするという認識で良い
     })
     .done(function(data){
+      // 非同期通信に成功した時の記述
+      // function(data)となっている部分の第一引数はサーバーから返されたデータが入っている
+      // この時サーバーから返ってくるデータは、jbuilderで作成したcreate.json.jbuilderのデータ
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.form__message').val('');

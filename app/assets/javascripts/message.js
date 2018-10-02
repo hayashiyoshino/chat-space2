@@ -25,6 +25,10 @@ $(function() {
     return html;
   }
 
+  function scroll() {
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -51,6 +55,7 @@ $(function() {
       $('.messages').append(html);
       $('.form__message').val('');
       $('#button').prop('disabled', false);
+      scroll()
     })
   })
 })

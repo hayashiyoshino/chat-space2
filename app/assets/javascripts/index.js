@@ -13,7 +13,7 @@ $(function() {
     var html = `<div class="chat-group-user clearfix id="chat-group-user-22">
                   <input name="group[user_ids][]" type="hidden" value="1">
                   <p class="chat-group-user__name">
-                  "Nothing such as user!!!"
+                  <strong>Nothing such as user!!!</strong>
                   </p>
                 </div>`
     search_list.append(html);
@@ -30,7 +30,7 @@ $(function() {
     })
     .done(function(users){
       search_list.empty();
-      if (users.length !== 0) {
+      if (users.length !== 0 && input.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
         });

@@ -109,9 +109,11 @@
 
   .chat-group-form__action-btn {
     display: inline-block;
+    border-radius: 5px;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: #f8bbd0;
+    font-weight: bold;
     border: 0;
   }
 }

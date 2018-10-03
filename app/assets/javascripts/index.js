@@ -9,6 +9,16 @@ $(function() {
     search_list.append(html);
   }
 
+  function appendNoUser(user){
+    var html = `<div class="chat-group-user clearfix id="chat-group-user-22">
+                  <input name="group[user_ids][]" type="hidden" value="1">
+                  <p class="chat-group-user__name">
+                  "Nothing such as user!!!"
+                  </p>
+                </div>`
+    search_list.append(html);
+  }
+
   $("#user-search-field").on("keyup", function() {
     var input = $(this).val();
     console.log(input);
@@ -24,6 +34,8 @@ $(function() {
         users.forEach(function(user){
           appendUser(user);
         });
+      }else{
+        appendNoUser('一致する名前がありません');
       }
     })
 

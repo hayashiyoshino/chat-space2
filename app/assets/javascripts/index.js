@@ -38,7 +38,9 @@ $(function() {
         appendNoUser('一致する名前がありません');
       }
     })
-
-  })
+    .fail(function(){
+      alert('ユーザーの検索に失敗しました');
+    })
+  });
 
 })

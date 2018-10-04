@@ -21,7 +21,6 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $(this).val();
-    console.log(input);
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -55,6 +54,10 @@ $(function() {
   }
 
   $("#user-search-result").on('click', '.user-search-add', function() {
+    // $(".user-search-add").on('click', function{ })のように、
+    // jsで後から追加した要素に対してイベントを設定することはできない。
+    // なので、ここでは、元から存在した要素である、#user-search-resultに対してイベントを設定している。
+    // on()メソッドの第二引数に.user-search-resultを設定しているため、#user-search-result配下にある.user-serarch-addがclickされたらfunction実行される。
     console.log(this);
     var name = $(this).data("user-name")
     var id = $(this).data("user-id")

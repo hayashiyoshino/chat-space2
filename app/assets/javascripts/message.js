@@ -70,10 +70,11 @@ $(function() {
   });
 
   $(function(){
-    setInterval(update, 50000);
+    setInterval(update, 500000);
   });
   function update(){
     if($('.messages')[0]){
+      // var message_id = $('.messages .message:last').attr('id');
       var message_id = $('.message').last().attr('id');
       console.log(message_id);
     } else {
@@ -89,10 +90,17 @@ $(function() {
       // contentType: false,
       dataType: 'json'
     })
-    .always(function(data){
-      console.log(data)
+    .done(function(data){
+       console.log(data)
+       $('.fomr__submit').prop('disabled', false);
+      // data.forEach(function(a){
+      //   var html = buildHTML(a);
+      //   $('.messages').append(html);
+      // })
       $.each(data, function(i, data){
-        buildHTML(data);
+         console.log(data)
+        var html = buildHTML(data);
+        $('.messages').append(html);
       });
     });
   }

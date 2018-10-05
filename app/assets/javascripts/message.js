@@ -70,7 +70,7 @@ $(function() {
   });
 
   $(function(){
-    setInterval(update, 5000);
+    setInterval(update, 50000);
   });
   function update(){
     if($('.messages')[0]){

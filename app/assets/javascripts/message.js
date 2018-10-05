@@ -6,7 +6,7 @@ $(function() {
       img = `<img src = "${ message.image }", class="lower-message__image">`
     };
 
-    var html = `<div class="message">
+    var html = `<div class="message" data-id='${ message.id }'>
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${ message.user_name }
@@ -67,5 +67,47 @@ $(function() {
       alert('error')
       $('.form__submit').prop('disabled', false);
     })
-  })
-})
+  });
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+  function update(){
+    if($('.messages')[0]){
+      var message_id = $('.message').last().attr('id');
+      console.log(message_id);
+    } else {
+      var message_id = 0
+    }
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: message_id
+      },
+      // processData: false,
+      // contentType: false,
+      dataType: 'json'
+    })
+    .always(function(data){
+      console.log(data)
+      $.each(data, function(i, data){
+        buildHTML(data);
+      });
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

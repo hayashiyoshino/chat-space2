@@ -54,6 +54,7 @@ $(function() {
     // FormDataを使用してフォームの情報を取得した時には必ずfalseにするという認識で良い
     })
     .done(function(data){
+      console.log(data);
       // 非同期通信に成功した時の記述
       // function(data)となっている部分の第一引数はサーバーから返されたデータが入っている
       // この時サーバーから返ってくるデータは、jbuilderで作成したcreate.json.jbuilderのデータ

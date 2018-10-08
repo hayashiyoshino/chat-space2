@@ -12,8 +12,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    @users = User.where.not(id: params[:users_id]).where('name LIKE(?)', "#{params[:keyword]}%")
     if current_user.update(user_params)
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json
+      end
     else
       render :edit
     end

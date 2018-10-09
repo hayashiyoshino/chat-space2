@@ -42,6 +42,7 @@ $(function() {
     console.log(url);
     $.ajax({
     url: url,
+    // locationは現在開いているページの様々な情報を含んでいるオブジェクト。locationオブジェクトのhref属性を指定すると、指定したurlが取れる。
     type: "POST",
     data: formData,
     dataType: 'json',

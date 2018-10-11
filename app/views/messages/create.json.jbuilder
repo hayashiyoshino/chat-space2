@@ -1,7 +1,7 @@
 json.image @message.image.url
 json.user_name @message.user.name
 json.content @message.content
-json.time @message.created_at
+json.time @message.created_at.to_s
 json.id @message.id
 
 # jbuilderファイルでは基本的にjson.KEY VALUEという形で書くことができる。

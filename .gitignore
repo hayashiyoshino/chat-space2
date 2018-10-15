@@ -18,6 +18,5 @@
 
 .byebug_history
 
-public/uploads/*
 
-/app/uploaders/image_uploader.rb
+

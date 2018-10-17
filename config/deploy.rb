@@ -22,6 +22,7 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+#
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

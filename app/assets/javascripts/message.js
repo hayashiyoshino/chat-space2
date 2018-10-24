@@ -72,7 +72,7 @@ $(function() {
   });
 
   $(function(){
-    setInterval(update, 500000);
+    setInterval(update, 5000);
   });
   function update(){
     if($('.messages')[0]){
@@ -80,7 +80,7 @@ $(function() {
       var message_id = $('.message').last().attr('id');
       console.log(message_id);
     } else {
-      var message_id = 0
+      // var message_id = 0
     }
     $.ajax({
       url: location.href,
@@ -94,7 +94,7 @@ $(function() {
     })
     .done(function(data){
        console.log(data)
-       $('.fomr__submit').prop('disabled', false);
+       // $('.fomr__submit').prop('disabled', false);
       // data.forEach(function(a){
       //   var html = buildHTML(a);
       //   $('.messages').append(html);

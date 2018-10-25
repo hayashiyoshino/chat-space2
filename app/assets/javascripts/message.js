@@ -6,7 +6,7 @@ $(function() {
       img = `<img src = "${ message.image }", class="lower-message__image">`
     };
 
-    var html = `<div class="message" data-id='${ message.id }'>
+    var html = `<div class="message" data-message-id='${ message.id }'>
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${ message.user_name }
@@ -77,7 +77,7 @@ $(function() {
   function update(){
     if($('.messages')[0]){
       // var message_id = $('.messages .message:last').attr('id');
-      var message_id = $('.message').last().attr('id');
+      var message_id = $('.message').last().data("message-id");
       console.log(message_id);
     } else {
       // var message_id = 0

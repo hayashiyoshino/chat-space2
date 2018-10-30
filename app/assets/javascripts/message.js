@@ -72,7 +72,7 @@ $(function() {
   });
 
   $(function(){
-    setInterval(update, 50000);
+    setInterval(update, 500000);
   });
   function update(){
     if($('.messages')[0]){

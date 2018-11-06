@@ -25,8 +25,8 @@
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             ファイル
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
 
         / ネストされたモデルに対してform_forを使用する場合、親モデルのインスタンス(もしくは親モデルのid)を第一引数、子モデルのインスタンスを第二引数に設定する。
